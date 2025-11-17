@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proxy Web Server — Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link rel="icon" href="data:," />
+  <meta name="color-scheme" content="dark light" />
+</head>
+<body data-page="dashboard">
+  <nav class="navbar">
+    <div class="title">Proxy Web Server</div>
+    <div class="links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="logs.html">Logs</a>
+      <a href="cache.html">Cache</a>
+      <a href="filter.html">Filters</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="card">
+      <h2>Server Status</h2>
+      <div class="status">
+        <div class="indicator off" id="status-indicator"></div>
+        <div id="running-text">Stopped</div>
+      </div>
+      <div style="margin-top: 12px; display:flex; gap:10px;">
+        <button class="btn success" id="start-btn">Start Server</button>
+        <button class="btn danger" id="stop-btn">Stop Server</button>
+      </div>
+    </div>
+
+    <div class="grid" style="margin-top:16px;">
+      <div class="card">
+        <h2>Active Threads</h2>
+        <div class="metric" id="threads">0</div>
+        <div class="sub">Number of client handler threads</div>
+      </div>
+      <div class="card">
+        <h2>Cache Entries</h2>
+        <div class="metric" id="cache-count">0</div>
+        <div class="sub">Responses stored in cache</div>
+      </div>
+      <div class="card">
+        <h2>Blocked Domains</h2>
+        <div class="metric" id="blocked-count">0</div>
+        <div class="sub">Managed via Filters page</div>
+      </div>
+      <div class="card">
+        <h2>Recent Visits</h2>
+        <div class="sub">Latest domains seen by proxy (HTTP/HTTPS)</div>
+        <ul id="recent-visits" style="list-style:none; padding-left:0; margin-top:8px;"></ul>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

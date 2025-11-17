@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proxy Web Server — Logs</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link rel="icon" href="data:," />
+</head>
+<body data-page="logs">
+  <nav class="navbar">
+    <div class="title">Proxy Web Server</div>
+    <div class="links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="logs.html">Logs</a>
+      <a href="cache.html">Cache</a>
+      <a href="filter.html">Filters</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="card">
+      <h2>Activity Logs</h2>
+      <div style="margin-bottom:10px; display:flex; gap:8px; align-items:center;">
+        <button class="btn" id="refresh-logs">Refresh Logs</button>
+        <button class="btn danger" id="clear-logs">Clear Logs</button>
+        <label style="margin-left:auto; display:flex; align-items:center; gap:6px; color:#93c5fd;">
+          <input type="checkbox" id="logs-live-toggle" checked /> Live update
+        </label>
+      </div>
+      <table class="table" id="logs-table">
+        <thead>
+          <tr>
+            <th>Timestamp</th>
+            <th>Client IP</th>
+            <th>URL</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proxy Web Server — Cache</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link rel="icon" href="data:," />
+</head>
+<body data-page="cache">
+  <nav class="navbar">
+    <div class="title">Proxy Web Server</div>
+    <div class="links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="logs.html">Logs</a>
+      <a href="cache.html">Cache</a>
+      <a href="filter.html">Filters</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="card">
+      <h2>Cached Responses</h2>
+      <div class="sub" style="margin-top:6px;">
+        Note: Only HTTP resources are cached. HTTPS (CONNECT) traffic is encrypted end-to-end and cannot be cached without TLS interception.
+      </div>
+      <div style="margin-bottom:10px; display:flex; gap:8px; align-items:center;">
+        <button class="btn" id="refresh-cache">Refresh Cache</button>
+        <button class="btn danger" id="clear-cache">Clear Cache</button>
+        <label style="margin-left:auto; display:flex; align-items:center; gap:6px; color:#93c5fd;">
+          <input type="checkbox" id="cache-live-toggle" checked /> Live update
+        </label>
+      </div>
+      <table class="table" id="cache-table">
+        <thead>
+          <tr>
+            <th>Timestamp</th>
+            <th>URL</th>
+            <th>Size (bytes)</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>
